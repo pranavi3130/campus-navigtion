@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Find classrooms, labs, the library and the canteen, and get walking directions around campus.">
+<title>Campus Navigator</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🧭</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>Campus Navigator</h1>
+    <p>Find any room, lab or building and walk there.</p>
+  </div>
+  <button id="theme" class="icon" aria-label="Switch light or dark theme">◐</button>
+</header>
+<main class="app">
+  <section class="card mapcard">
+    <svg id="map" viewBox="0 0 600 400" role="img" aria-label="Campus map"></svg>
+    <div class="legend" id="legend"></div>
+  </section>
+  <section class="side">
+    <div class="card">
+      <label for="q">Search buildings or rooms</label>
+      <input id="q" type="search" placeholder="Try “library”, “lab” or “204”" autocomplete="off">
+      <div class="chips" id="chips"></div>
+      <ul id="list"></ul>
+    </div>
+    <div class="card" id="detail" hidden></div>
+    <div class="card">
+      <div class="row">
+        <div><label for="from">From</label><select id="from"></select></div>
+        <button class="icon" id="swap" aria-label="Swap start and destination">⇄</button>
+        <div><label for="to">To</label><select id="to"></select></div>
+      </div>
+      <div id="out" aria-live="polite"><p class="empty">Pick a destination to see directions.</p></div>
+      <button class="ghost" id="share" hidden>Copy link to this route</button>
+    </div>
+  </section>
+</main>
+<footer>Map is illustrative. Edit <code>js/app.js</code> to match your campus.</footer>
+<script src="js/app.js"></script>
+</body>
+</html>
